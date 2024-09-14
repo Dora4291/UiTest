@@ -81,7 +81,7 @@ UICorner_4.Parent = Frame
 
 -- Scripts:
 
-local function RMHF_fake_script() -- HideScriptButton.HideScript 
+local function FMSPVU_fake_script() -- HideScriptButton.HideScript 
 	local script = Instance.new('Script', HideScriptButton)
 
 	local player = game.Players.LocalPlayer
@@ -94,8 +94,8 @@ local function RMHF_fake_script() -- HideScriptButton.HideScript
 		button.Text = "ReOpen Gui"
 	end)
 end
-coroutine.wrap(RMHF_fake_script)()
-local function PSCEQF_fake_script() -- TerminateGUi.TerminateScript 
+coroutine.wrap(FMSPVU_fake_script)()
+local function PVPMJ_fake_script() -- TerminateGUi.TerminateScript 
 	local script = Instance.new('Script', TerminateGUi)
 
 	local player = game.Players.LocalPlayer
@@ -104,7 +104,7 @@ local function PSCEQF_fake_script() -- TerminateGUi.TerminateScript
 	local frame = screenGui:WaitForChild("Frame")
 	local terminateButton = script.Parent
 	terminateButton.MouseButton1Click:Connect(function()
-		frame.Visible = false
+		Instance:Destroy();
 	end)
 end
-coroutine.wrap(PSCEQF_fake_script)()
+coroutine.wrap(PVPMJ_fake_script)()
