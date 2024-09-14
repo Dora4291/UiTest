@@ -82,7 +82,7 @@ UICorner_4.Parent = Frame
 -- Scripts:
 
 HideScriptButton.MouseButton1Click:Connect(function()
-	HideScriptButton.Text = Frame.Visible and "Hide Script"
+	HideScriptButton.Text = Frame.Visible and "Hide Script" or "ReOpen Gui"
 	Frame.Transparency = Frame.Transparency < 1 and 1 or 0
 	TerminateGUi.Visible = not TerminateGUi.Visible
 end)
