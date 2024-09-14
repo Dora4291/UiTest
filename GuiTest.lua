@@ -80,10 +80,9 @@ UICorner_4.CornerRadius = UDim.new(0, 12)
 UICorner_4.Parent = Frame
 
 -- Scripts:
+
 HideScriptButton.MouseButton1Click:Connect(function()
-	HideScriptButton.Text = Frame.Visible and "Hide Script" or "ReOpen Gui"
-	Frame.Visible = not Frame.Visible
-end)
-TerminateGUi.MouseButton1Click:Connect(function()
-	TestGui:Destroy()
+	HideScriptButton.Text = Frame.Visible and "Hide Script"
+	Frame.Transparency = Frame.Transparency < 1 and 1 or 0
+	TerminateGUi.Visible = not TerminateGUi.Visible
 end)
