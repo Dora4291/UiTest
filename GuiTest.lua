@@ -80,31 +80,10 @@ UICorner_4.CornerRadius = UDim.new(0, 12)
 UICorner_4.Parent = Frame
 
 -- Scripts:
-
-local function FMSPVU_fake_script() -- HideScriptButton.HideScript 
-	local script = Instance.new('Script', HideScriptButton)
-
-	local player = game.Players.LocalPlayer
-	local playerGui = player:WaitForChild("PlayerGui")
-	local screenGui = playerGui:WaitForChild("ScreenGui")
-	local frame = screenGui:WaitForChild("Frame")
-	local button = script.Parent
-	button.MouseButton1Click:Connect(function()
-		frame.Visible = false
-		button.Text = "ReOpen Gui"
-	end)
-end
-coroutine.wrap(FMSPVU_fake_script)()
-local function PVPMJ_fake_script() -- TerminateGUi.TerminateScript 
-	local script = Instance.new('Script', TerminateGUi)
-
-	local player = game.Players.LocalPlayer
-	local playerGui = player:WaitForChild("PlayerGui")
-	local screenGui = playerGui:WaitForChild("ScreenGui")
-	local frame = screenGui:WaitForChild("Frame")
-	local terminateButton = script.Parent
-	terminateButton.MouseButton1Click:Connect(function()
-		Instance:Destroy();
-	end)
-end
-coroutine.wrap(PVPMJ_fake_script)()
+HideScriptButton.MouseButton1Click:Connect(function()
+	HideScriptButton.Text = Frame.Visible and "Hide Script" or "ReOpen Gui"
+	Frame.Visible = not Frame.Visible
+end)
+TerminateGUi.MouseButton1Click:Connect(function()
+	TestGui:Destroy()
+end)
